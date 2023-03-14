@@ -1,0 +1,38 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="environs" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="id" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="api.tests.APITestCase" />
+          <option value="accounts.models.AbstractUser" />
+          <option value="educative.users.forms.course" />
+          <option value="educative.users.views.course" />
+          <option value="blog_project.urls.drf_yasg" />
+          <option value="users.models.CustomUcer" />
+          <option value="users.models.CustomUser" />
+          <option value="pages.views.HomePageView.as_view" />
+          <option value="django.db.models.fields.related.ForeignKey.payment_amount" />
+          <option value="django.db.models.fields.related.ForeignKey.amount_spent" />
+          <option value="django.db.models.fields.related.ForeignKey.id" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

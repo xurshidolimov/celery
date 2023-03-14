@@ -1,0 +1,26 @@
+1. yuklab ol erlang  -> https://www.erlang.org/downloads
+2. yuklab ol rabbitmq -> https://rabbitmq.com/install-windows.html#installer
+3. "rabbitmq command prompt"ga  "rabbitmq-plugins enable rabbitmq_management" comandasini kiritish kerak
+4. "127.0.0.1:15672" portga kiriladi. username=guest, password=guest
+5. https://docs.celeryq.dev/en/stable/django/first-steps-with-django.html?highlight=django
+    "config"da celery.py file yaratiladi. Ichiga quyidagilar yoziladi.
+
+    import os
+    from celery import Celery
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+    app = Celery('config')
+    app.config_from_object('django.conf:settings', namespace='CELERY')
+    app.autodiscover_tasks()
+    @app.task(bind=True)
+    def debug_task(self):
+    print(f'Celery is working!!!!!!!')
+
+6. "__init__.py" filega quyidagilar yoziladi
+
+    from .celery import app as celery_app
+    __all__ = ('celery_app',)
+
+7. app ichida "tasks.py" file yaratiladi. va kerakli funksiyalar shu yerga yoziladi.
+8. "shell"ga "celery -A proj worker --pool=solo -l INFO" buyruqi yoziladi
+9. "tasks.py"da yozilgan funksiya func() funksiyasi func.delay() ko'rinishida chaqiriladi.
+10. Funksiyalar @app.task() decoratori ostida yoziladi.
